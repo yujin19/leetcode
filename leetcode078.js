@@ -12,3 +12,26 @@ var subsets = function(nums) {
     [[]]
   );
 };
+
+// recursion
+let re = [[]];
+let cur = [];
+var subsets1 = function(nums) {
+  if (nums === null || nums.length === 0) {
+    return;
+  }
+  helper(nums, 0, re, cur);
+  re.shift();
+  return re;
+};
+
+var helper = function(nums = [], index = 0, re = [[]], cur = []) {
+  if (index >= nums.length) {
+    re.push(cur.slice());
+    return;
+  }
+  helper(nums, index + 1, re, cur);
+  cur.push(nums[index]);
+  helper(nums, index + 1, re, cur);
+  cur.pop();
+};
