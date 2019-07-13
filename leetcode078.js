@@ -14,7 +14,7 @@ var subsets = function(nums) {
 };
 
 // recursion
-let re = [[]];
+let re = [];
 let cur = [];
 var subsets1 = function(nums) {
   if (nums === null || nums.length === 0) {
