@@ -26,3 +26,20 @@ var isPalindrome = function(head) {
     return preBoolean && curBoolean;
   }
 };
+
+// more solution
+var isPalindrome = function(head) {
+  let re = [];
+  while (head !== null) {
+    re.push(head.val);
+    head = head.next;
+  }
+  for (let i = 0; i < re.length; i++) {
+    if (re[i] === re[re.length - i - 1]) {
+      continue;
+    } else {
+      return false;
+    }
+  }
+  return true;
+};
